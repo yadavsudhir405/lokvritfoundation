@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "LOKVRIT Foundation — Together for People, Progress, and Planet",
   description:
     "LOKVRIT Foundation is a not-for-profit social development organization uniting people to advance education, livelihoods, women's empowerment, and climate resilience.",
+  icons: {
+    icon: "/lokvrit-logo.svg",
+  },
 };
 
 export default function RootLayout({

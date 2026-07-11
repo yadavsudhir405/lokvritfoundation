@@ -1,4 +1,5 @@
 import { Button, Container, Grid, cn } from "./ui";
+import {LokvritFoundationText} from "@/app/components/lokvrit-foundation-text";
 
 /** Small uppercase label used above section headings. */
 function Eyebrow({
