@@ -3,7 +3,7 @@ name: Deploy to S3 + CloudFront
 on:
   push:
     branches:
-      - main          # change to your production branch if different
+      - main
 
 concurrency:
   group: deploy-production
@@ -13,6 +13,7 @@ jobs:
   deploy:
     name: Build & Deploy
     runs-on: ubuntu-latest
+    environment: prod
     permissions:
       contents: read  # only needs read access to the repo
 
@@ -25,7 +26,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 23
           cache: npm
 
       # ── 3. Install dependencies ────────────────────────────────────────────
