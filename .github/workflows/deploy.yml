@@ -1,0 +1,74 @@
+name: Deploy to S3 + CloudFront
+
+on:
+  push:
+    branches:
+      - main          # change to your production branch if different
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true  # cancel queued runs if a newer push arrives
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read  # only needs read access to the repo
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Node setup with dependency caching ─────────────────────────────
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # ── 3. Install dependencies ────────────────────────────────────────────
+      - name: Install dependencies
+        run: npm ci
+
+      # ── 4. Build (outputs to ./out) ────────────────────────────────────────
+      - name: Build static site
+        run: npm run build
+        env:
+          # Add any public env vars your app needs at build time here:
+          # NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NODE_ENV: production
+
+      # ── 5. Configure AWS credentials ───────────────────────────────────────
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region:            ${{ secrets.AWS_REGION }}
+
+      # ── 6. Sync to S3 (delete removed files, keep new/changed ones) ────────
+      - name: Sync build output to S3
+        run: |
+          aws s3 sync ./out s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --cache-control "public,max-age=31536000,immutable" \
+            --exclude "*.html" \
+            --exclude "*.json"
+
+          # HTML and JSON files should not be cached aggressively
+          # so browsers always fetch the latest version
+          aws s3 sync ./out s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --cache-control "public,max-age=0,must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.json"
+
+      # ── 7. Invalidate CloudFront cache ─────────────────────────────────────
+      - name: Invalidate CloudFront distribution
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
