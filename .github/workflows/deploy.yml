@@ -38,7 +38,7 @@ jobs:
         env:
           # Add any public env vars your app needs at build time here:
           # NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-          NODE_ENV: production
+          NODE_ENV: prod
 
       # ── 5. Configure AWS credentials ───────────────────────────────────────
       - name: Configure AWS credentials
