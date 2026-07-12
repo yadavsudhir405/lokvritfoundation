@@ -71,7 +71,7 @@ export function Button<T extends ElementType = "a">({
   return (
     <Component
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-btn px-8 py-3.5 text-[15px] font-semibold whitespace-nowrap transition-colors md:px-8 md:py-4 md:text-base",
+        "flex items-center justify-center gap-2 rounded-btn px-8 py-3.5 text-[15px] font-semibold whitespace-nowrap transition-colors md:px-8 md:py-4 md:text-base",
         buttonVariants[variant],
         className,
       )}
