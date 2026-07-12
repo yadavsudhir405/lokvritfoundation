@@ -7,7 +7,7 @@ export function cn(...classes: Array<string | false | null | undefined>) {
 
 /**
  * Page container: centers content and applies the Figma section padding
- * (80px on wide screens) while keeping a max content width.
+ * (24px on mobile, 80px on wide screens) while keeping a max content width.
  */
 export function Container({
   children,
@@ -71,7 +71,7 @@ export function Button<T extends ElementType = "a">({
   return (
     <Component
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-btn px-8 py-4 text-base font-semibold whitespace-nowrap transition-colors",
+        "inline-flex items-center justify-center gap-2 rounded-btn px-8 py-3.5 text-[15px] font-semibold whitespace-nowrap transition-colors md:px-8 md:py-4 md:text-base",
         buttonVariants[variant],
         className,
       )}

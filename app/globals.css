@@ -54,4 +54,16 @@ body {
   background: var(--color-cream);
   color: var(--color-muted);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shift on mobile when menu opens */
+body.menu-open {
+  overflow: hidden;
 }
