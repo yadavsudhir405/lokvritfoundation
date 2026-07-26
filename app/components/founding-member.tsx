@@ -1,30 +1,31 @@
 import {AppSection} from "@/app/components/app-section";
 import {Grid, cn} from "@/app/components/ui";
+import { UserRound } from "lucide-react";
 
 const FOUNDING_MEMBERS = [
     {
         name: "Saptama Kumari",
         role: "Co-Founder",
         body: "A Master's graduate in Social Work from the Tata Institute of Social Sciences (TISS), she has played a central leadership role since inception, reflecting LOKVRIT's commitment to equity, inclusion, and women-led development.",
-        icon: "bg-primary",
+        iconColor: "text-primary",
     },
     {
         name: "Punam Kumari",
         role: "Co-Founder",
         body: "An education professional whose work anchors the Foundation's focus on foundational learning, capacity building, and gender-equitable participation in shaping institutions and communities.",
-        icon: "bg-secondary",
+        iconColor: "text-secondary",
     },
     {
         name: "Mukesh Baa",
         role: "Co-Founder",
         body: "A Master's graduate in Social Work from the Tata Institute of Social Sciences (TISS). Raised in a remote Scheduled Tribe village in Gumla, Jharkhand, he later moved to Germany to pursue further education and build global partnerships for community-led development in India.",
-        icon: "bg-accent",
+        iconColor: "text-accent",
     },
     {
         name: "Sujit Modi",
         role: "Co-Founder",
         body: "A lawyer and journalist educated at the Indian Institute of Mass Communication (IIMC), bringing expertise in law, communication, and advocacy to the Foundation's governance and outreach.",
-        icon: "bg-primary",
+        iconColor: "text-primary",
     },
 ];
 
@@ -38,7 +39,7 @@ export function FoundingMember() {
                         key={member.name}
                         className="col-span-12 flex flex-col gap-4 rounded-card border border-line bg-white px-7 py-8 sm:col-span-6"
                     >
-                        <span className={cn("size-11 rounded-full", member.icon)}/>
+                        <UserRound className={cn("size-11", member.iconColor)} strokeWidth={1.5} />
                         <div>
                             <h3 className="text-[18px] font-semibold text-primary">
                                 {member.name}
