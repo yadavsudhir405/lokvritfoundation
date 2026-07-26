@@ -3,6 +3,10 @@ import {AppSection} from "@/app/components/app-section";
 export function OurStory() {
     return (
         <AppSection id="our-story" header="OUR STORY" headerShortDescription="How We Started" bgColor="bg-cream">
+            <div className="hidden md:block">
+                <img src="/journey1.png" alt="Our Story"/>
+            </div>
+            <div className="md:hidden">
             <p>
                 <strong>Every transformative journey begins when people come together with a shared purpose.</strong>
             </p>
@@ -60,6 +64,7 @@ export function OurStory() {
             <p>
                 <strong><q><em>Together for People, Progress, and Planet.</em></q></strong>
             </p>
+            </div>
         </AppSection>
     );
 }
