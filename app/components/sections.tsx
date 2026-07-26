@@ -64,14 +64,16 @@ export function About() {
   return (
     <section id="about" className="w-full bg-white py-[100px]">
       <Container>
-        <Grid className="items-center gap-y-12">
+        {/* The image floats so the copy wraps beside it and then reflows into
+            the space underneath once it runs past the image's fixed height. */}
+        <div>
           {/* Image placeholder */}
-          <div className="col-span-12 md:col-span-5">
+          <div className="mb-8 w-full md:float-left md:mr-10 md:mb-6 md:w-[41.666%]">
             <div className="h-[420px] w-full rounded-card border border-line bg-cream" />
           </div>
 
-          {/* Copy */}
-          <div className="col-span-12 flex flex-col gap-[18px] md:col-span-7">
+          {/* Copy — block flow (not flex/grid) so line boxes wrap the float. */}
+          <div className="space-y-[18px]">
             <Eyebrow>WHO WE ARE</Eyebrow>
             <h2 className="text-[32px] leading-[40px] font-bold text-primary">
               LOKVRIT — The Unity of People
@@ -108,7 +110,10 @@ export function About() {
               <p><strong>Together for People, Progress, and Planet.</strong></p>
             </details>
           </div>
-        </Grid>
+
+          {/* Contain the float so it can't escape the section. */}
+          <div className="clear-both" />
+        </div>
       </Container>
     </section>
   );
