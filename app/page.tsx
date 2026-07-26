@@ -9,6 +9,7 @@ import {
     WhyChooseUs,
 } from "./components/sections";
 import {OurStory} from "@/app/components/our-story";
+import {TheoryOfChange} from "@/app/components/theory-of-change";
 
 export default function Home() {
     return (
@@ -21,6 +22,7 @@ export default function Home() {
                 <FocusAreas/>
                 <WhyChooseUs/>
                 <OurStory/>
+                <TheoryOfChange/>
                 <Cta/>
             </main>
             <SiteFooter/>
