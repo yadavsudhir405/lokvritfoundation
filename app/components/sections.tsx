@@ -76,21 +76,37 @@ export function About() {
             <h2 className="text-[32px] leading-[40px] font-bold text-primary">
               LOKVRIT — The Unity of People
             </h2>
-            <p className="text-[16px] leading-[26px] text-muted">
-              LOKVRIT Foundation is a not-for-profit social development
-              organization founded on the belief that unity — the collective
-              strength of individuals, communities, institutions, and partners —
-              creates lasting social change. We work with communities, not for
-              them, through research-informed, participatory, and locally led
-              approaches that strengthen knowledge, skills, livelihoods, food
-              security, financial inclusion, and community institutions.
+            <p className="text-[16px] leading-[26px]">
+              <strong>LOKVRIT Foundation</strong> is a not-for-profit social development organization founded on the
+              belief that <strong>LOKVRIT means &quot;Unity of People&quot;</strong>—the collective strength of individuals,
+              communities, institutions, and partners working together to create lasting social change. Guided
+              by our philosophy, <strong>&quot;Together for People, Progress, and Planet,&quot;</strong> we strive to build an
+              inclusive, resilient, and sustainable society where every person and community can realize their
+              full potential with dignity, equity, and harmony with nature.
             </p>
-            <a
-              href="#"
-              className="text-[15px] font-semibold text-secondary hover:underline"
-            >
-              Read our full story →
-            </a>
+            <details>
+              <summary className="text-secondary">Read our full story →</summary>
+              <p>We believe that sustainable development is achieved <strong>with communities, not for communities</strong>.
+              Through research-informed, participatory, and locally led approaches, we strengthen knowledge,
+              skills, sustainable livelihoods, food and nutrition security, financial inclusion, environmental
+              stewardship, and community institutions, enabling people to become active leaders of their own
+              development.</p>
+              <p>
+              Our work focuses on <strong>youth development, women&#39;s empowerment, sustainable rural and
+              urban livelihoods, education, climate resilience, and community institution building,
+              creating integrated solutions that address the interconnected challenges of poverty, inequality,
+                and social exclusion.</strong>
+              </p>
+              <p>Driven by the values of <strong>equity, inclusion, innovation, accountability, and collective action,</strong>
+              LOKVRIT Foundation collaborates with communities, governments, CSR partners, academic
+              institutions, and civil society organizations to create sustainable and measurable impact, ensuring
+              that no one is left behind.</p>
+              <p>
+              More than an organization, LOKVRIT Foundation is a movement that unites people to create
+              opportunities, strengthen communities, and build a future where everyone can learn, earn, lead,
+              and live with dignity.</p>
+              <p><strong>Together for People, Progress, and Planet.</strong></p>
+            </details>
           </div>
         </Grid>
       </Container>
