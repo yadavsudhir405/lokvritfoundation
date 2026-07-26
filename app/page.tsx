@@ -10,6 +10,7 @@ import {
 } from "./components/sections";
 import {OurStory} from "@/app/components/our-story";
 import {TheoryOfChange} from "@/app/components/theory-of-change";
+import {GuidingPrinciple} from "@/app/components/guiding-principle";
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
                 <WhyChooseUs/>
                 <OurStory/>
                 <TheoryOfChange/>
+                <GuidingPrinciple/>
                 <Cta/>
             </main>
             <SiteFooter/>
