@@ -15,6 +15,7 @@ import {SdgAlignment} from "@/app/components/sdg-alignment";
 import {Meal} from "@/app/components/meal";
 import {OrganizationalPolicies} from "@/app/components/organizational-policies";
 import {FoundingMember} from "@/app/components/founding-member";
+import {CoreValues} from "@/app/components/core-values";
 
 export default function Home() {
     return (
@@ -33,6 +34,7 @@ export default function Home() {
                 <Meal/>
                 <OrganizationalPolicies/>
                 <FoundingMember/>
+                <CoreValues/>
                 <Cta/>
             </main>
             <SiteFooter/>
