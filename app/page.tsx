@@ -16,6 +16,7 @@ import {Meal} from "@/app/components/meal";
 import {OrganizationalPolicies} from "@/app/components/organizational-policies";
 import {FoundingMember} from "@/app/components/founding-member";
 import {CoreValues} from "@/app/components/core-values";
+import {AtAGlance} from "@/app/components/at-a-glance";
 
 export default function Home() {
     return (
@@ -35,6 +36,7 @@ export default function Home() {
                 <OrganizationalPolicies/>
                 <FoundingMember/>
                 <CoreValues/>
+                <AtAGlance/>
                 <Cta/>
             </main>
             <SiteFooter/>
