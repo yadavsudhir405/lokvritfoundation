@@ -66,10 +66,13 @@ const VOLUNTEER_ROLES = [
     "Community mobilization",
 ];
 
-/** Sub-heading + body pairing repeated for each block in this section. */
-function Block({title, children}: { title: string; children: ReactNode }) {
+/**
+ * Sub-heading + body pairing repeated for each block in this section.
+ * `id` makes the block an anchor target for the header/footer links.
+ */
+function Block({id, title, children}: { id?: string; title: string; children: ReactNode }) {
     return (
-        <div className="mb-10 last:mb-0">
+        <div id={id} className="mb-10 last:mb-0">
             <span className="block mb-2 font-bold text-secondary">{title}</span>
             {children}
         </div>
@@ -90,12 +93,12 @@ export function AtAGlance() {
     return (
         <AppSection id="at-a-glance" header="AT A GLANCE"
                     headerShortDescription="Our Work, Governance, and How to Join Us" bgColor="bg-cream">
-            <Block title="Our Work">
+            <Block id="our-work" title="Our Work">
                 <p>We work in:</p>
                 <BulletList items={WORK_AREAS}/>
             </Block>
 
-            <Block title="Impact Framework">
+            <Block id="impact-framework" title="Impact Framework">
                 <ul className="list-decimal pl-5">
                     {IMPACT_STEPS.map((step) => (
                         <li key={step} className="mb-2">{step}</li>
@@ -107,7 +110,7 @@ export function AtAGlance() {
                 </p>
             </Block>
 
-            <Block title="Governance">
+            <Block id="governance" title="Governance">
                 <p>
                     As a <strong>Section 8 non-profit company</strong>, LOKVRIT Foundation follows high standards of
                     transparency, accountability, ethical leadership, statutory compliance, independent audits, and
@@ -116,7 +119,7 @@ export function AtAGlance() {
                 <BulletList items={GOVERNANCE_BODIES}/>
             </Block>
 
-            <Block title="Leadership Team">
+            <Block id="leadership-team" title="Leadership Team">
                 <p>
                     Our leadership consists of experienced professionals committed to servant leadership and
                     community-driven development, with expertise in:
@@ -124,7 +127,7 @@ export function AtAGlance() {
                 <BulletList items={LEADERSHIP_EXPERTISE}/>
             </Block>
 
-            <Block title="CSR Partnership">
+            <Block id="csr-partnership" title="CSR Partnership">
                 <p>
                     We partner in education, livelihoods, climate action, women empowerment, youth employability,
                     nutrition, digital inclusion, and research with:
@@ -135,14 +138,14 @@ export function AtAGlance() {
                 </p>
             </Block>
 
-            <Block title="Volunteers">
+            <Block id="volunteers" title="Volunteers">
                 <p>
                     Students, professionals, educators, researchers, and corporate volunteers can contribute through:
                 </p>
                 <BulletList items={VOLUNTEER_ROLES}/>
             </Block>
 
-            <Block title="Donate Us">
+            <Block id="donate" title="Donate Us">
                 <p>
                     Every contribution helps empower communities through education, livelihoods, women and youth
                     empowerment, food security, environmental conservation, and institution building. Together, we

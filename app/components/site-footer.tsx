@@ -1,17 +1,37 @@
 import { Container } from "./ui";
 
-const FOOTER_COLUMNS = [
+/** A footer entry without `href` renders as plain text instead of a link. */
+type FooterLink = { label: string; href?: string };
+
+const FOOTER_COLUMNS: { heading: string; links: FooterLink[] }[] = [
   {
     heading: "Organization",
-    links: ["About Us", "Our Story", "Our Work", "Governance", "Careers"],
+    links: [
+      { label: "About Us", href: "#about" },
+      { label: "Our Story", href: "#our-story" },
+      { label: "Our Work", href: "#focus" },
+      { label: "Governance", href: "#governance" },
+      { label: "Core Values", href: "#core-values" },
+    ],
   },
   {
     heading: "Get Involved",
-    links: ["Donate", "Volunteer", "CSR Partnership", "Fundraise"],
+    links: [
+      { label: "Donate", href: "#donate" },
+      { label: "Volunteer", href: "#volunteers" },
+      { label: "CSR Partnership", href: "#csr-partnership" },
+      { label: "Fundraise", href: "#cta" },
+    ],
   },
   {
     heading: "Contact",
-    links: ["info@lokvritfoundation.org", "New Delhi, India"],
+    links: [
+      {
+        label: "info@lokvritfoundation.org",
+        href: "mailto:info@lokvritfoundation.org",
+      },
+      { label: "Giridih, Jharkhand, India" },
+    ],
   },
 ];
 
@@ -38,15 +58,25 @@ export function SiteFooter() {
               <p className="text-[12.5px] font-bold tracking-[0.3px] text-accent md:text-[14px] md:font-semibold">
                 {column.heading.toUpperCase()}
               </p>
-              {column.links.map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="text-[13px] text-footer-muted transition-colors hover:text-white md:text-[14px]"
-                >
-                  {link}
-                </a>
-              ))}
+              {column.links.map((link) =>
+                link.href ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-[13px] text-footer-muted transition-colors hover:text-white md:text-[14px]"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  // Plain info (e.g. the address) — nothing to navigate to.
+                  <span
+                    key={link.label}
+                    className="text-[13px] text-footer-muted md:text-[14px]"
+                  >
+                    {link.label}
+                  </span>
+                ),
+              )}
             </div>
           ))}
         </div>

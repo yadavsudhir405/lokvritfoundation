@@ -58,9 +58,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling for anchor links */
+/* Smooth scrolling for anchor links. The padding keeps the targeted element
+   clear of the sticky header instead of landing underneath it. */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 128px;
+  }
 }
 
 /* Prevent layout shift on mobile when menu opens */
