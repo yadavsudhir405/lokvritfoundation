@@ -12,6 +12,9 @@ import {OurStory} from "@/app/components/our-story";
 import {TheoryOfChange} from "@/app/components/theory-of-change";
 import {GuidingPrinciple} from "@/app/components/guiding-principle";
 import {SdgAlignment} from "@/app/components/sdg-alignment";
+import {Meal} from "@/app/components/meal";
+import {OrganizationalPolicies} from "@/app/components/organizational-policies";
+import {FoundingMember} from "@/app/components/founding-member";
 
 export default function Home() {
     return (
@@ -27,6 +30,9 @@ export default function Home() {
                 <TheoryOfChange/>
                 <GuidingPrinciple/>
                 <SdgAlignment/>
+                <Meal/>
+                <OrganizationalPolicies/>
+                <FoundingMember/>
                 <Cta/>
             </main>
             <SiteFooter/>
