@@ -66,11 +66,6 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          {/* Desktop donate button */}
-          <Button href="#cta" className="hidden px-6 py-3 text-[15px] md:inline-flex">
-            Donate Now
-          </Button>
-
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(true)}
