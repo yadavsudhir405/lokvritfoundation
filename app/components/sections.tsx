@@ -1,7 +1,7 @@
 import { Button, Container, Grid, cn } from "./ui";
 
 /** Small uppercase label used above section headings. */
-function Eyebrow({
+export function Eyebrow({
   children,
   className,
 }: {
@@ -80,9 +80,9 @@ export function About() {
             </h2>
             <p className="text-[16px] leading-[26px]">
               <strong>LOKVRIT Foundation</strong> is a not-for-profit social development organization founded on the
-              belief that <strong>LOKVRIT means &quot;Unity of People&quot;</strong>—the collective strength of individuals,
+              belief that <strong>LOKVRIT</strong> means <strong><q><em>Unity of People</em></q></strong>—the collective strength of individuals,
               communities, institutions, and partners working together to create lasting social change. Guided
-              by our philosophy, <strong>&quot;Together for People, Progress, and Planet,&quot;</strong> we strive to build an
+              by our philosophy, <strong><q><em>Together for People, Progress, and Planet</em></q></strong> we strive to build an
               inclusive, resilient, and sustainable society where every person and community can realize their
               full potential with dignity, equity, and harmony with nature.
             </p>
@@ -255,3 +255,5 @@ export function Cta() {
     </section>
   );
 }
+
+
