@@ -13,7 +13,7 @@ const POLICIES = [
 export function OrganizationalPolicies() {
     return (
         <AppSection id="organizational-policies" header="ORGANIZATIONAL POLICIES"
-                    headerShortDescription="Governance Built on Integrity" bgColor="bg-white">
+                    headerShortDescription="Governance Built on Integrity">
             <p>
                 At <strong>LOKVRIT Foundation</strong>, we believe that strong institutions are built on
                 <strong> integrity, transparency, inclusion, and accountability</strong>. As we grow, we are committed

@@ -1,13 +1,11 @@
 import {SiteHeader} from "./components/site-header";
 import {SiteFooter} from "./components/site-footer";
-import {
-    About,
-    BeliefQuote,
-    Cta,
-    FocusAreas,
-    Hero,
-    WhyChooseUs,
-} from "./components/sections";
+import {Hero} from "./components/hero";
+import {BeliefQuote} from "./components/belief-quote";
+import {About} from "./components/about";
+import {FocusAreas} from "./components/focus-areas";
+import {WhyChooseUs} from "./components/why-choose-us";
+import {Cta} from "./components/cta";
 import {OurStory} from "@/app/components/our-story";
 import {TheoryOfChange} from "@/app/components/theory-of-change";
 import {GuidingPrinciple} from "@/app/components/guiding-principle";
@@ -22,7 +20,7 @@ export default function Home() {
     return (
         <>
             <SiteHeader/>
-            <main className="flex flex-1 flex-col">
+            <main className="flex flex-1 flex-col bg-cream">
                 <Hero/>
                 <BeliefQuote/>
                 <About/>

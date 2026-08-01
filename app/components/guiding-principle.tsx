@@ -1,5 +1,5 @@
 import {AppSection} from "@/app/components/app-section";
-import {cn, Grid} from "@/app/components/ui";
+import {cn, Grid, Card} from "@/app/components/ui";
 import {
     UserCircle,
     UsersRound,
@@ -63,15 +63,14 @@ const PRINCIPLES: Array<{
 
 export function GuidingPrinciple() {
     return (
-        <AppSection id="guiding-principles" header="GUIDING PRINCIPLES" headerShortDescription="What Shapes Our Work"
-                    bgColor="bg-cream">
+        <AppSection id="guiding-principles" header="GUIDING PRINCIPLES" headerShortDescription="What Shapes Our Work">
             <Grid className="gap-y-6">
                 {PRINCIPLES.map((principle) => {
                     const Icon = principle.icon;
                     return (
-                        <article
+                        <Card
                             key={principle.title}
-                            className="col-span-12 flex flex-col gap-4 rounded-card border border-line bg-white px-7 py-8 sm:col-span-6 md:col-span-4"
+                            className="col-span-12 sm:col-span-6 md:col-span-4"
                         >
                             <Icon className={cn("size-11", principle.iconColor)} strokeWidth={1.5} />
                             <h3 className="text-[18px] font-semibold text-primary">
@@ -80,7 +79,7 @@ export function GuidingPrinciple() {
                             <p className="text-[14px] leading-[22px] text-muted">
                                 {principle.body}
                             </p>
-                        </article>
+                        </Card>
                     );
                 })}
             </Grid>

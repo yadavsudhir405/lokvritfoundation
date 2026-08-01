@@ -2,7 +2,7 @@ import {AppSection} from "@/app/components/app-section";
 
 export function OurStory() {
     return (
-        <AppSection id="our-story" header="OUR STORY" headerShortDescription="How We Started" bgColor="bg-cream">
+        <AppSection id="our-story" header="OUR STORY" headerShortDescription="How We Started">
             <div className="hidden md:block">
                 <img src="/journey1.png" alt="Our Story"/>
             </div>

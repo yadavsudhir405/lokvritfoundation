@@ -54,7 +54,7 @@ const SDGS = [
 export function SdgAlignment() {
     return (
         <AppSection id="sdg-alignment" header="SUSTAINABLE DEVELOPMENT GOALS (SDG) ALIGNMENT"
-                    headerShortDescription="Our Work in the Global Agenda" bgColor="bg-white">
+                    headerShortDescription="Our Work in the Global Agenda">
             <p>
                 <strong>LOKVRIT Foundation</strong> aligns its programmes with the <strong>United Nations Sustainable
                 Development Goals (SDGs)</strong> and contributes towards achieving the global vision of inclusive,

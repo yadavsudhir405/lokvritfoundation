@@ -2,7 +2,7 @@ import {AppSection} from "@/app/components/app-section";
 
 export function TheoryOfChange() {
     return (
-        <AppSection header="THEORY OF CHANGE" bgColor="bg-white" id="theory-of-change" headerShortDescription="From Vision to Impact">
+        <AppSection header="THEORY OF CHANGE" id="theory-of-change" headerShortDescription="From Vision to Impact">
             <p>
                 At <strong>LOKVRIT Foundation</strong>, we believe that lasting change begins with the unity of people
                 When individuals, communities, institutions, and partners come together with a shared purpose,

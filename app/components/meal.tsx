@@ -10,7 +10,7 @@ const MEAL_OUTCOMES = [
 export function Meal() {
     return (
         <AppSection id="meal" header="MONITORING, EVALUATION, ACCOUNTABILITY & LEARNING (MEAL)"
-                    headerShortDescription="Listening, Learning, and Being Accountable" bgColor="bg-cream">
+                    headerShortDescription="Listening, Learning, and Being Accountable">
             <p>
                 At <strong>LOKVRIT Foundation</strong>, we believe that meaningful change begins with listening,
                 learning, and being accountable to the communities we serve. As we build our programmes, we are

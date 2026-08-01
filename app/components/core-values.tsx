@@ -87,8 +87,7 @@ function CoreValuesWheel() {
 
 export function CoreValues() {
     return (
-        <AppSection id="core-values" header="CORE VALUES" headerShortDescription="What We Stand For"
-                    bgColor="bg-white">
+        <AppSection id="core-values" header="CORE VALUES" headerShortDescription="What We Stand For">
             {/* The wheel is unreadable at phone widths, so it gives way to a list. */}
             <div className="hidden md:block">
                 <CoreValuesWheel/>

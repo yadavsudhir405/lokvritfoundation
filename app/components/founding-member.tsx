@@ -1,5 +1,5 @@
 import {AppSection} from "@/app/components/app-section";
-import {Grid, cn, Avatar} from "@/app/components/ui";
+import {Grid, cn, Avatar, Card} from "@/app/components/ui";
 import { UserRound } from "lucide-react";
 
 const FOUNDING_MEMBERS = [
@@ -35,13 +35,12 @@ const FOUNDING_MEMBERS = [
 
 export function FoundingMember() {
     return (
-        <AppSection id="founding-member" header="FOUNDING MEMBER" headerShortDescription="The People Behind LOKVRIT"
-                    bgColor="bg-cream">
+        <AppSection id="founding-member" header="FOUNDING MEMBER" headerShortDescription="The People Behind LOKVRIT">
             <Grid className="gap-y-6">
                 {FOUNDING_MEMBERS.map((member) => (
-                    <article
+                    <Card
                         key={member.name}
-                        className="col-span-12 flex flex-col gap-4 rounded-card border border-line bg-white px-7 py-8 sm:col-span-6"
+                        className="col-span-12 sm:col-span-6"
                     >
                         <Avatar
                             src={member.image}
@@ -62,7 +61,7 @@ export function FoundingMember() {
                         <p className="text-[14px] leading-[22px] text-muted">
                             {member.body}
                         </p>
-                    </article>
+                    </Card>
                 ))}
             </Grid>
         </AppSection>

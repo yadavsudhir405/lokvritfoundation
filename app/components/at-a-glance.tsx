@@ -92,7 +92,7 @@ function BulletList({items}: { items: string[] }) {
 export function AtAGlance() {
     return (
         <AppSection id="at-a-glance" header="AT A GLANCE"
-                    headerShortDescription="Our Work, Governance, and How to Join Us" bgColor="bg-cream">
+                    headerShortDescription="Our Work, Governance, and How to Join Us">
             <Block id="our-work" title="Our Work">
                 <p>We work in:</p>
                 <BulletList items={WORK_AREAS}/>

@@ -120,3 +120,26 @@ export function Avatar({
     </AvatarPrimitive.Root>
   );
 }
+
+/**
+ * Card component with elevated shadow effect.
+ * Used for displaying content in cards across multiple sections.
+ */
+export function Card({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <article
+      className={cn(
+        "flex flex-col gap-4 rounded-card border border-line bg-white px-7 py-8 shadow-[0_0_30px_rgba(0,0,0,0.2)]",
+        className
+      )}
+    >
+      {children}
+    </article>
+  );
+}
