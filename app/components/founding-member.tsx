@@ -47,8 +47,9 @@ export function FoundingMember() {
                             src={member.image}
                             alt={member.name}
                             fallback={
-                                <UserRound className={cn("size-11", member.iconColor)} strokeWidth={1.5} />
+                                <UserRound className={cn("size-16", member.iconColor)} strokeWidth={1.5} />
                             }
+                            className={"size-64"}
                         />
                         <div>
                             <h3 className="text-[18px] font-semibold text-primary">
