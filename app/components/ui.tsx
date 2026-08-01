@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 /** Minimal className joiner (avoids a runtime dependency). */
 export function cn(...classes: Array<string | false | null | undefined>) {
@@ -79,5 +80,43 @@ export function Button<T extends ElementType = "a">({
     >
       {children}
     </Component>
+  );
+}
+
+/**
+ * Avatar component using Radix UI.
+ * Displays an image with a fallback (initials or icon).
+ */
+export function Avatar({
+  src,
+  alt,
+  fallback,
+  className,
+}: {
+  src?: string | null;
+  alt: string;
+  fallback: ReactNode;
+  className?: string;
+}) {
+  return (
+    <AvatarPrimitive.Root
+      className={cn(
+        "relative flex size-16 shrink-0 overflow-hidden rounded-full",
+        className
+      )}
+    >
+      {src && (
+        <AvatarPrimitive.Image
+          src={src}
+          alt={alt}
+          className="aspect-square h-full w-full object-cover"
+        />
+      )}
+      <AvatarPrimitive.Fallback
+        className="flex h-full w-full items-center justify-center bg-muted"
+      >
+        {fallback}
+      </AvatarPrimitive.Fallback>
+    </AvatarPrimitive.Root>
   );
 }
