@@ -22,7 +22,7 @@ const FOUNDING_MEMBERS = [
         role: "Co-Founder",
         body: "A Master's graduate in Social Work from the Tata Institute of Social Sciences (TISS). Raised in a remote Scheduled Tribe village in Gumla, Jharkhand, he later moved to Germany to pursue further education and build global partnerships for community-led development in India.",
         iconColor: "text-accent",
-        image: null,
+        image: "/mukesh-baa.png",
     },
     {
         name: "Sujit Modi",
